@@ -1,4 +1,4 @@
 import os
 PUSH_KEY = os.getenv('key')
-WB_USERIDS = os.getenv('WB_USERIDS')
+WB_USERIDS = os.getenv('1510272830,1406936893,2037990880,2596989174,1981834894')
 WB_USERID = WB_USERIDS.split(",")
