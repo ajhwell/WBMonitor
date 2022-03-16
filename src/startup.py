@@ -8,14 +8,17 @@ def timer(n,task):
         count+=1
         if(count>times):
             msg = 'Monitor End'
-            requests.get('https://sc.ftqq.com/' + PUSH_KEY + '.send?text=' + msg)
+            requests.get('https://api2.pushdeer.com/message/push?pushkey=' + PUSH_KEY + '&text=' + msg)            
+
             break
         result = task.MonitorWB()
         print(result[0])
         if(result[0]):
             title = result[1]
             desp = result[2]
-            requests.get('https://sc.ftqq.com/' + PUSH_KEY + '.send?text=' + title +'&desp='+desp)
+            requests.get('https://api2.pushdeer.com/message/push?pushkey=' + PUSH_KEY + '&text=' + title +'&desp='+desp+'&type=markdown')
+            
+
             print(f'succ get newWeibo in {count}')
         else:
             print(f'keep get and now {count}')
